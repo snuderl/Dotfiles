@@ -1,0 +1,8 @@
+Create symlinks to files in the home directory.
+stow <folder>
+
+You can specify where to place the symlinks using the -t flag.
+stow -t <destination> <folder>
+
+Remove configuration using the -D flag.
+stow -D <folder>
