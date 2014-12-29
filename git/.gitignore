@@ -1,0 +1,13 @@
+# Vim swap files
+*.sw?
+
+# Vim session files
+*.vimsession
+
+# Python
+*.pyc
+
+# Build files
+/dist
+/bin
+
