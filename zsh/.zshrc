@@ -93,6 +93,7 @@ alias ll='ls -lh'      #long list
 
 alias grep='grep --color'
 alias zshrc='vim ~/.zshrc'
+alias vimrc='vim ~/.vimrc'
 alias sgrep='grep -R -n -H -C 5 --exclude-dir={.git,.svn,CVS} '
 
 
