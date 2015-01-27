@@ -1,3 +1,8 @@
+[alias]
+    co = checkout
+    logg = log --all --graph --pretty=format:'%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+    p = push
+    st = status -sb
 [user]
 	name = Snuderl
 	email = snuderl@gmail.com
