@@ -151,3 +151,36 @@ bindsym $mod+r mode "resize"
 bar {
         status_command i3status -c ~/.i3/i3status.conf
 }
+
+
+# Add a small delay to prevent suspend races
+# # https://bugs.launchpad.net/ubuntu/+source/unity-2d/+bug/830348
+set $Locker i3lock && sleep 1
+#
+set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown
+mode "$mode_system" {
+    bindsym l exec --no-startup-id $Locker, mode "default"
+    bindsym e exec --no-startup-id i3-msg exit, mode "default"
+    bindsym s exec --no-startup-id $Locker && systemctl suspend, mode "default"
+    bindsym h exec --no-startup-id $Locker && systemctl hibernate, mode "default"
+    bindsym r exec --no-startup-id systemctl reboot, mode "default"
+    bindsym Shift+s exec --no-startup-id systemctl poweroff, mode "default"  
+    # back to normal: Enter or Escape
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+
+bindsym $mod+Pause mode "$mode_system"
+
+
+# Multimedia Keys
+# # increase volume
+# bindsym XF86AudioRaiseVolume exec amixer -q set Master 5%+ unmute
+# # decrease volume
+# bindsym XF86AudioLowerVolume exec amixer -q set Master 5%- unmute
+# # mute volume
+# bindsym XF86AudioMute exec amixer -q set Master mute
+# # pause / play / next / previous
+# bindsym XF86AudioPlay exec playerctl play-pause
+# bindsym XF86AudioNext exec playerctl next
+# bindsym XF86AudioPrev exec playerctl previous
