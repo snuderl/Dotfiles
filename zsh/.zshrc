@@ -100,4 +100,4 @@ alias sgrep='grep -R -n -H -C 5 --exclude-dir={.git,.svn,CVS} '
 alias t='tail -f'
 
 
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+PATH="$(ruby -e 'print Gem.user_dir')/bin:$PATH"
