@@ -15,7 +15,6 @@
 	# See http://stackoverflow.com/q/18257622/276478
 	preloadindex = true
 [diff]
-	tool = meld
 	# Use more time to create better diffs. E.g. matching opening/closing braces
 	# from neighbour functions.
 	algorithm = patience
